@@ -1,0 +1,23 @@
+{
+  "name": "utils",
+  "version": "1.0.0",
+  "description": "common JavaScript / TypeScript utils by @carberrychai",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "test": "vitest",
+    "coverage": "vitest --coverage"
+  },
+  "keywords": [
+    "utils"
+  ],
+  "author": "carberrychai",
+  "license": "ISC",
+  "devDependencies": {
+    "tsup": "^5.11.11",
+    "typescript": "^4.5.4",
+    "vitest": "^0.1.16"
+  }
+}
