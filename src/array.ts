@@ -1,5 +1,14 @@
 /**
  * Generate a range of numbers. the `end` is exclusive.
+ * @example
+ * ```ts
+ *  for(const x of range(10))
+ *    console.log(x)
+ * ```
+ * @example
+ * ```ts
+ *  const arr: number[] = [...range(10)] // [0, 1, 2, ... 9]
+ * ```
  */
 export function range(end: number): Iterable<number>
 export function range(
