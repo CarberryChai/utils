@@ -33,3 +33,14 @@ export function* range(
     start += step
   }
 }
+
+/**
+ * get the max value of number array
+ *
+ * @export
+ * @param {number[]} arr
+ * @return {*}  {number}
+ */
+export function getMax(arr: number[]): number {
+  return Math.max(...arr)
+}
