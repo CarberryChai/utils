@@ -44,3 +44,36 @@ export function* range(
 export function getMax(arr: number[]): number {
   return Math.max(...arr)
 }
+
+export function count<T>(arr: T[], value: T): number {
+  let result = 0
+  for (const item of arr) {
+    if (item === value) result++
+  }
+  return result
+}
+
+export function countIf<T>(
+  arr: readonly T[],
+  callback: (item: T) => boolean
+): number {
+  let result = 0
+  for (const item of arr) {
+    if (callback(item)) result++
+  }
+  return result
+}
+
+export function remove<T>(arr: T[], value: T) {
+  const idx = arr.indexOf(value)
+  if (idx < 0) return
+  return arr.splice(idx, 1)[0]
+}
+
+export function removeIf<T>(arr: T[], callback: (item: T) => boolean): T[] {
+  const deleted = []
+  for (let index = 0; index < arr.length; index++) {
+    if (callback(arr[index])) deleted.push(...arr.splice(index, 1))
+  }
+  return deleted
+}
