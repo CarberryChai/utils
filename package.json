@@ -1,6 +1,6 @@
 {
   "name": "@carberrychai/utils",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "common JavaScript / TypeScript utils by @carberrychai",
   "type": "module",
   "main": "dist/index.js",
