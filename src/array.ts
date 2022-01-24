@@ -34,10 +34,14 @@ function removeConsecutiveDuplicates<T>(arr: T[]) {
 function removeNonConsecutiveDuplicates<T>(arr: T[]) {
   if (arr.length < 2) return
   const map: Map<T, number> = new Map()
-  for (let i = arr.length; i > 0; i--) {
+  let i = 0
+  while (i < arr.length) {
     if (map.has(arr[i])) {
       arr.splice(i, 1)
-    } else map.set(arr[i], i)
+    } else {
+      map.set(arr[i], i)
+      i++
+    }
   }
 }
 export function unique<T>(arr: T[]) {
@@ -83,8 +87,10 @@ export function remove<T>(arr: T[], value: T) {
 
 export function removeIf<T>(arr: T[], callback: Predicate<T>): T[] {
   const deleted = []
-  for (let i = arr.length; i > 0; i--) {
+  let i = 0
+  while (i < arr.length) {
     if (callback(arr[i])) deleted.push(...arr.splice(i, 1))
+    else i++
   }
   return deleted
 }

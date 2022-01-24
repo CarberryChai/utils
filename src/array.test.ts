@@ -1,5 +1,15 @@
 import { describe, expect, it } from 'vitest'
-import { count, countIf, getMax, range, remove, removeIf } from './array'
+import {
+  count,
+  countIf,
+  getMax,
+  isEqual,
+  isSorted,
+  range,
+  remove,
+  removeIf,
+  unique,
+} from './array'
 import { isOdd } from './math'
 
 describe('array utils test', () => {
@@ -33,5 +43,24 @@ describe('array utils test', () => {
     const arr = [...range(10)]
     expect(removeIf(arr, isOdd)).toEqual([1, 3, 5, 7, 9])
     expect(arr).toEqual([0, 2, 4, 6, 8])
+  })
+
+  it('isSorted', () => {
+    expect(isSorted([1, 2, 3])).toEqual(true)
+    expect(isSorted([2, 1, 3])).toEqual(false)
+  })
+
+  it('isEqual', () => {
+    expect(isEqual([1, 2, 3], [1, 2, 3])).toEqual(true)
+    expect(isEqual([1, 2, 3, 4], [1, 2, 3])).toEqual(false)
+  })
+
+  it('unique', () => {
+    const arr1 = [1, 2, 2, 3, 3, 4, 4, 5]
+    const arr2 = [1, 3, 2, 5, 3, 1, 9]
+    unique(arr1)
+    unique(arr2)
+    expect(arr1).toEqual([1, 2, 3, 4, 5])
+    expect(arr2).toEqual([1, 3, 2, 5, 9])
   })
 })
