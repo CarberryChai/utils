@@ -44,6 +44,9 @@ function removeNonConsecutiveDuplicates<T>(arr: T[]) {
     }
   }
 }
+/**
+ * remove duplicates
+ */
 export function unique<T>(arr: T[]) {
   isSorted(arr)
     ? removeConsecutiveDuplicates(arr)
