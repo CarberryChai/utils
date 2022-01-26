@@ -10,8 +10,7 @@
     "build": "tsup src/index.ts --format cjs,esm --dts",
     "test": "vitest",
     "coverage": "vitest --coverage",
-    "prerelease": "npm run build",
-    "release": "bumpp --commit --push --tag && pnpm publish"
+    "release": "npm run build && bumpp --commit --push --tag && pnpm publish"
   },
   "keywords": [
     "utils"
