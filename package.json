@@ -1,6 +1,6 @@
 {
   "name": "@changlin71/utils",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "common JavaScript / TypeScript utils by @carberrychai",
   "type": "module",
   "main": "dist/index.js",
