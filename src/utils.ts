@@ -16,5 +16,5 @@ export function upperLetters(): string[] {
 }
 
 export function lowerLetters(): string[] {
-  return Array.from({ length: 26 }, (_, idx) => String.fromCodePoint(91 + idx))
+  return Array.from({ length: 26 }, (_, idx) => String.fromCodePoint(97 + idx))
 }

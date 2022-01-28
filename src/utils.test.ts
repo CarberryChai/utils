@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { upperLetters } from './utils'
+import { upperLetters, lowerLetters } from './utils'
 
 describe('utils test', () => {
   it('upperLetters', () => {
@@ -30,6 +30,37 @@ describe('utils test', () => {
       'X',
       'Y',
       'Z',
+    ])
+  })
+
+  it('lowerLetters', () => {
+    expect(lowerLetters()).toEqual([
+      'a',
+      'b',
+      'c',
+      'd',
+      'e',
+      'f',
+      'g',
+      'h',
+      'i',
+      'j',
+      'k',
+      'l',
+      'm',
+      'n',
+      'o',
+      'p',
+      'q',
+      'r',
+      's',
+      't',
+      'u',
+      'v',
+      'w',
+      'x',
+      'y',
+      'z',
     ])
   })
 })
