@@ -110,25 +110,8 @@ export function removeIf<T>(arr: T[], callback: Predicate<T>): T[] {
  *  const arr: number[] = [...range(10)] // [0, 1, 2, ... 9]
  * ```
  */
-export function range(end: number): Iterable<number>
-export function range(
-  start: number,
-  end: number,
-  step?: number
-): Iterable<number>
-export function* range(
-  start: number,
-  end?: number,
-  step?: number
-): Iterable<number> {
-  if (end === undefined) {
-    end = start
-    start = 0
-    step = 1
-  } else {
-    step = step ?? 1
-  }
-  while (start < end) {
+export function* range(start: number, end: number, step = 1) {
+  while ((end - start) * step > 0) {
     yield start
     start += step
   }
