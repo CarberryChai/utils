@@ -99,7 +99,7 @@ export function removeIf<T>(arr: T[], callback: Predicate<T>): T[] {
 }
 
 /**
- * Generate a range of numbers. the `end` is exclusive.
+ * Generate a range of numbers.`end` is exclusive.
  * @example
  * ```ts
  *  for(const x of range(10))
@@ -108,7 +108,7 @@ export function removeIf<T>(arr: T[], callback: Predicate<T>): T[] {
  * @example
  * ```ts
  *  const arr: number[] = [...range(10)] // [0, 1, 2, ... 9]
- * const arr: number[] = [...range(9, 0, -3)] // [9, 6, 3]
+ *  const arr: number[] = [...range(9, 0, -3)] // [9, 6, 3]
  * ```
  */
 export function* range(start: number, end?: number, step = 1) {
