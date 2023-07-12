@@ -9,6 +9,7 @@ import {
   remove,
   removeIf,
   unique,
+  quickSort
 } from './array'
 import { isOdd } from './math'
 
@@ -63,5 +64,11 @@ describe('array utils test', () => {
     unique(arr2)
     expect(arr1).toEqual([1, 2, 3, 4, 5])
     expect(arr2).toEqual([1, 3, 2, 5, 9])
+  })
+
+  it("quickSort", () => {
+    const arr1 = [4, 9, 1, 0, 3, 8, 5]
+    const arr2 = quickSort(arr1)
+    expect(arr2).toEqual([0, 1, 3, 4, 5, 8, 9])
   })
 })

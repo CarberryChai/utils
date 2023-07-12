@@ -7,3 +7,7 @@ export function factorial(n: number): number {
   while (n > 1) result *= n--
   return result
 }
+
+export function clamp(min: number, value: number, max: number): number {
+  return Math.min(Math.max(min, value), max)
+}

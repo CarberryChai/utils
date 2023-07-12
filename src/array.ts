@@ -121,3 +121,19 @@ export function* range(start: number, end?: number, step = 1) {
     start += step
   }
 }
+
+export function quickSort(arr: number[]): number[] {
+  if (arr.length <= 1) return arr
+  const pivot = arr[0]
+  const left = [],
+    right = []
+  for (let idx = 1; idx < arr.length; idx++) {
+    const value = arr[idx]
+    if (value > pivot) {
+      right.push(value)
+    } else {
+      left.push(value)
+    }
+  }
+  return [...quickSort(left), pivot, ...quickSort(right)]
+}
