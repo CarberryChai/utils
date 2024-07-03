@@ -10,3 +10,7 @@ export function hasOwnProperty<T>(obj: T, key: PropertyKey) {
 export function isKeyOf<T extends object>(obj: T, key: PropertyKey): boolean {
   return key in obj
 }
+
+export function merge<T extends object>(...sources: T[]): T {
+  return Object.assign({}, ...sources)
+}

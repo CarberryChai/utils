@@ -12,6 +12,10 @@
     "coverage": "vitest --coverage",
     "release": "npm run build && bumpp --commit --push --tag && pnpm publish"
   },
+  "files": [
+    "src",
+    "dist"
+  ],
   "keywords": [
     "utils"
   ],
