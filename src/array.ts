@@ -122,18 +122,24 @@ export function* range(start: number, end?: number, step = 1) {
   }
 }
 
-export function quickSort(arr: number[]): number[] {
-  if (arr.length <= 1) return arr
-  const pivot = arr[0]
-  const left = [],
-    right = []
-  for (let idx = 1; idx < arr.length; idx++) {
-    const value = arr[idx]
-    if (value > pivot) {
-      right.push(value)
-    } else {
-      left.push(value)
+/**
+ * Splits an array into chunks of a specified size.
+ *
+ * @template T - The type of elements in the array.
+ * @param {T[]} arrs - The array to be split into chunks.
+ * @param {number} size - The size of each chunk.
+ * @returns {T[][]} - A new array containing the chunks.
+ *
+ * @example
+ * // Splitting an array of numbers into chunks of size 2
+ * const result = chunk([1, 2, 3, 4, 5], 2);
+ * // result: [[1, 2], [3, 4], [5]]
+ */
+export function chunk<T>(arrs: T[], size: number): T[][] {
+  return arrs.reduce((acc, _, i) => {
+    if (i % size === 0) {
+      acc.push(arrs.slice(i, i + size))
     }
-  }
-  return [...quickSort(left), pivot, ...quickSort(right)]
+    return acc
+  }, [] as T[][])
 }
